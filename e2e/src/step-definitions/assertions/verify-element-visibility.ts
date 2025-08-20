@@ -19,3 +19,12 @@ Then(
     console.log(`${elementKey} should be displayed`);
   }
 )
+
+Then(
+  /^the button should be displayed$/,
+  async function() {
+    const locator = await global.page.locator("[class='color_h1']");
+    await expect(locator).toBeVisible();
+    console.log(`H1 should be displayed`);
+  }
+)
